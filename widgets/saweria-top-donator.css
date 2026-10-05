@@ -1,0 +1,58 @@
+
+/* t35: Helcurt Collector flanking title in preview and OBS production (in-box: card overflow:hidden clips translate(-100%)) */
+.card .card-header,.subathon-container .sub_judul{position:relative!important;padding-left:3.9em!important;padding-right:3.9em!important}
+.card .card-header::before,.card .card-header::after,.subathon-container .sub_judul::before,.subathon-container .sub_judul::after{
+  content:""!important;position:absolute!important;top:50%!important;width:3.4em!important;height:3.4em!important;
+  background:url("https://raw.githubusercontent.com/MasAjie12/helcurt collector-alert-assets/main/kiri.png") center/contain no-repeat!important;
+  pointer-events:none!important;z-index:6!important;filter:drop-shadow(0 3px 8px rgba(0,0,0,.6)) saturate(1.08);
+}
+.card .card-header::before,.subathon-container .sub_judul::before{left:.35em!important;transform:translateY(-50%)!important;animation:helc-wchar-l .5s cubic-bezier(.2,.9,.25,1.14) .25s both,helc-wbob 3.2s ease-in-out infinite alternate!important}
+.card .card-header::after,.subathon-container .sub_judul::after{right:.35em!important;transform:translateY(-50%) scaleX(-1)!important;animation:helc-wchar-r .5s cubic-bezier(.2,.9,.25,1.14) .25s both,helc-wbob 3.2s ease-in-out infinite alternate .4s!important}
+@keyframes helc-wchar-l{from{opacity:0;transform:translate(-28px,-50%)}to{opacity:1;transform:translateY(-50%)}}
+@keyframes helc-wchar-r{from{opacity:0;transform:translate(28px,-50%) scaleX(-1)}to{opacity:1;transform:translateY(-50%) scaleX(-1)}}
+@keyframes helc-wbob{0%,100%{filter:drop-shadow(0 3px 8px rgba(0,0,0,.6)) saturate(1.08)}50%{filter:drop-shadow(0 9px 14px rgba(0,0,0,.72)) saturate(1.16)}}
+body{background:transparent!important;margin:0;overflow:hidden;font-family:'Trebuchet MS','Segoe UI',sans-serif}
+#__next > div{box-sizing:border-box;position:relative;isolation:isolate;overflow:hidden;border:1px solid #e91e63;border-radius:12px;background-image:linear-gradient(rgba(5,53,67,.25),rgba(6,42,51,.45)),url("https://raw.githubusercontent.com/MasAjie12/helcurt collector-alert-assets/main/bg.jpg"),radial-gradient(ellipse at 12% 18%,rgba(18,113,143,.34) 0 7px,transparent 8px),radial-gradient(ellipse at 78% 28%,rgba(255,107,74,.28) 0 5px,transparent 6px),radial-gradient(ellipse at 26% 82%,rgba(6,42,51,.22) 0 6px,transparent 7px),linear-gradient(135deg,#3b1152,#1a0526);color:#fce4ec;box-shadow:0 0 25px rgba(18,113,143,.34),inset 0 0 22px rgba(18,113,143,.34);animation:helc-sw-top-in .6s cubic-bezier(.2,.9,.3,1.15) forwards,helc-sw-top-drift 13s ease-in-out infinite alternate,helc-sw-top-glow 3.4s ease-in-out infinite}
+@keyframes helc-sw-top-in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes helc-sw-top-drift{from{background-position:0 0,0 0,0 0,0 0,0 0,0 0}to{background-position:0 0,0 0,10px -18px,-8px 14px,7px -11px,-10px 8px}}
+@keyframes helc-sw-top-glow{0%,100%{box-shadow:0 0 15px rgba(18,113,143,.34),inset 0 0 18px rgba(18,113,143,.34)}50%{box-shadow:0 0 38px rgba(18,113,143,.44),inset 0 0 28px rgba(18,113,143,.34)}}
+#__next > div::before{content:"";position:absolute;z-index:5;top:0;left:0;width:44%;height:2px;background:linear-gradient(90deg,transparent,#84ffff,transparent);box-shadow:0 0 10px rgba(18,113,143,.34);animation:helc-sw-top-sweep 3.2s linear infinite;pointer-events:none}
+@keyframes helc-sw-top-sweep{from{transform:translateX(-120%)}to{transform:translateX(340%)}}
+#__next > div::after{content:"";position:absolute;z-index:4;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(18,113,143,.40),transparent);animation:helc-hair 5s ease-in-out infinite;pointer-events:none}
+@keyframes helc-sw-top-float{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-10px) rotate(7deg)}}
+.sw-root .chakra-heading{margin:0 0 10px!important;padding:14px 16px 0!important;color:#fce4ec!important;text-shadow:0 0 10px rgba(18,113,143,.34)!important;font:800 20px 'Trebuchet MS','Segoe UI',sans-serif!important;text-align:left;letter-spacing:1.5px;text-transform:uppercase;animation:helc-sw-top-pulse 2.4s ease-in-out infinite}
+@keyframes helc-sw-top-pulse{0%,100%{text-shadow:0 0 7px rgba(18,113,143,.34)}50%{text-shadow:0 0 18px rgba(18,113,143,.34),0 0 30px rgba(18,113,143,.44)}}
+#__next > div .css-9jay18{display:grid!important;grid-template-columns:30px minmax(0,1fr) auto;align-items:center;gap:8px;margin:5px 10px!important;padding:7px 9px!important;border:1px solid transparent;border-radius:10px;background:rgba(6,42,51,.18)!important;animation:helc-sw-top-row .45s ease forwards}
+#__next > div .css-9jay18:nth-of-type(1){animation-delay:.12s}.css-9jay18:nth-of-type(2){animation-delay:.25s}.css-9jay18:nth-of-type(3){animation-delay:.38s}.css-9jay18:nth-of-type(4){animation-delay:.51s}.css-9jay18:nth-of-type(5){animation-delay:.64s}
+@keyframes helc-sw-top-row{from{opacity:0;transform:translateX(-16px)}to{opacity:1;transform:translateX(0)}}
+.css-9jay18 p{margin:0!important;color:#fce4ec!important;font-family:'Trebuchet MS','Segoe UI',sans-serif!important}
+.css-9jay18 .css-1vjv6qg{color:#84ffff!important;font-size:14px!important;font-weight:900!important;text-align:center}
+.css-9jay18 .css-jd1xht{color:#fce4ec!important;font-size:14px!important}
+.css-9jay18 .css-jd1xht:last-child{color:#84ffff!important;font-weight:800!important;text-align:right;white-space:nowrap}
+.css-9jay18:first-of-type{border-color:rgba(18,113,143,.26)!important;box-shadow:0 0 12px rgba(18,113,143,.34)!important}
+.css-9jay18:first-of-type .css-jd1xht{color:#fce4ec!important;text-shadow:0 0 9px rgba(18,113,143,.34)!important;animation:helc-sw-top-champ 2s ease-in-out 1.6s infinite}
+@keyframes helc-sw-top-champ{0%,100%{text-shadow:0 0 8px rgba(18,113,143,.34)}50%{text-shadow:0 0 20px rgba(18,113,143,.34),0 0 34px rgba(18,113,143,.44)}}
+
+@keyframes helc-hair{0%,100%{opacity:.25}50%{opacity:.9}}
+
+/* t35 Helcurt Collector decoration on Saweria runtime root */
+#__next > div::after{content:"✨";position:absolute;right:12px;bottom:8px;z-index:5;font-size:18px;opacity:.82;animation:helc-sw-sway 3s ease-in-out infinite;pointer-events:none}
+@keyframes helc-sw-sway{0%,100%{transform:rotate(-4deg) translateY(0)}50%{transform:rotate(4deg) translateY(-3px)}}
+
+/* t35 centered widget titles */
+.card-header,.card-header h4,.card-header h4 strong,.sub_judul,.sub_judul strong{text-align:center!important}
+.w-top .card .card-header,.w-mile .card .card-header,.w-queue .card .card-header{text-align:center!important}
+.w-top .card .card-header h4,.w-mile .card .card-header h4,.w-queue .card .card-header h4,.w-top .card .card-header h4 strong,.w-mile .card .card-header h4 strong,.w-queue .card .card-header h4 strong{text-align:center!important}
+.w-sub .subathon-container,.w-sub .subathon-container .sub_judul,.w-sub .subathon-container .sub_judul strong{text-align:center!important}
+#__next > div .chakra-heading,#__next > div .css-1fezxbg,#__next > div .css-1gz06j0,#__next > div .css-1gz06j0 .chakra-text{text-align:center!important}
+#__next > div .chakra-heading,#__next > div .css-1fezxbg,#__next > div .css-1gz06j0 .chakra-text{display:block!important;width:100%!important}
+
+/* t35 POKEMON badge on every widget card */
+.card-header h4::after,.sub_judul::after{content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='13'%3E%3Ctext x='0' y='10' font-family='sans-serif' font-size='9' font-weight='800' letter-spacing='1.4'%3E%3Ctspan fill='%23EF3D4E'%3EHELCURT COLLECTOR %3C/tspan%3E%3Ctspan fill='%234BE08A'%3E· %3C/tspan%3E%3Ctspan fill='%2312718F'%3EMEGA%3C/tspan%3E%3C/text%3E%3C/svg%3E");display:block;width:160px;height:13px;margin:4px auto 0}
+#__next > div .chakra-heading::after,#__next > div .css-1fezxbg::after,#__next > div .css-1gz06j0 .chakra-text::after{content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='13'%3E%3Ctext x='0' y='10' font-family='sans-serif' font-size='9' font-weight='800' letter-spacing='1.4'%3E%3Ctspan fill='%23EF3D4E'%3EHELCURT COLLECTOR %3C/tspan%3E%3Ctspan fill='%234BE08A'%3E· %3C/tspan%3E%3Ctspan fill='%2312718F'%3EMEGA%3C/tspan%3E%3C/text%3E%3C/svg%3E");display:block;width:160px;height:13px;margin:4px auto 0}
+
+/* t35 top donator title */
+.w-top .card .card-header h4,.w-top .card .card-header h4 strong{font-size:0!important}
+.w-top .card .card-header h4::before{content:"HELCURT COLLECTOR LEADERBOARD";font-size:19px!important;letter-spacing:1.5px;text-transform:uppercase;color:#00e5ff!important;text-shadow:0 2px 8px rgba(0,0,0,.85)}
+#__next > div > .chakra-heading{font-size:0!important}
+#__next > div > .chakra-heading::before{content:"HELCURT COLLECTOR LEADERBOARD";font-size:19px!important;letter-spacing:1.5px;text-transform:uppercase;color:#00e5ff!important;text-shadow:0 2px 8px rgba(0,0,0,.85)}

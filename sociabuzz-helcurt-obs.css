@@ -1,0 +1,113 @@
+/* Sociabuzz Custom Alert - Helcurt Collector Theme */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Poppins:wght@600;800&display=swap');
+
+/* Main Container */
+#__next > div {
+    background: transparent !important;
+}
+
+/* Card Container */
+#__next > div > div {
+    background-image: url('bg.jpeg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    border: 2px solid #8a2be2 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 0 25px rgba(138, 43, 226, 0.6), inset 0 0 15px rgba(0, 0, 0, 0.8) !important;
+    padding: 24px !important;
+    position: relative !important;
+    overflow: visible !important;
+    animation: helcurt-shadow-pulse 3s infinite alternate !important;
+}
+
+/* Left Decor (Flipped) */
+#__next > div > div::before {
+    content: '' !important;
+    position: absolute !important;
+    left: -50px !important;
+    top: 50% !important;
+    transform: translateY(-50%) scaleX(-1) !important;
+    width: 100px !important;
+    height: 100px !important;
+    background-image: url('kanan.png') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    pointer-events: none !important;
+    filter: drop-shadow(0 0 10px #8a2be2) !important;
+    animation: helcurt-float-left 2s infinite ease-in-out alternate !important;
+}
+
+/* Right Decor */
+#__next > div > div::after {
+    content: '' !important;
+    position: absolute !important;
+    right: -50px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 100px !important;
+    height: 100px !important;
+    background-image: url('kanan.png') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    pointer-events: none !important;
+    filter: drop-shadow(0 0 10px #8a2be2) !important;
+    animation: helcurt-float-right 2s infinite ease-in-out alternate !important;
+}
+
+/* Heading / Supporter Name */
+#__next > div .chakra-heading {
+    font-family: 'Rajdhani', sans-serif !important;
+    color: #00ffff !important;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #8a2be2 !important;
+    font-size: 28px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}
+
+/* Text Content & Amount */
+#__next > div p {
+    font-family: 'Poppins', sans-serif !important;
+    color: #ffffff !important;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.9) !important;
+    font-size: 18px !important;
+}
+
+/* Highlight Amount */
+#__next > div p strong, #__next > div p span {
+    color: #ff007f !important;
+    text-shadow: 0 0 8px #ff007f !important;
+    font-weight: 800 !important;
+}
+
+/* Animations */
+@keyframes helcurt-shadow-pulse {
+    0% {
+        box-shadow: 0 0 15px rgba(138, 43, 226, 0.4), inset 0 0 10px rgba(0, 0, 0, 0.8) !important;
+    }
+    100% {
+        box-shadow: 0 0 35px rgba(138, 43, 226, 0.9), 0 0 15px rgba(0, 255, 255, 0.5), inset 0 0 20px rgba(0, 0, 0, 0.9) !important;
+    }
+}
+
+@keyframes helcurt-float-left {
+    0% {
+        transform: translateY(-50%) scaleX(-1) translateX(0) !important;
+    }
+    100% {
+        transform: translateY(-50%) scaleX(-1) translateX(-10px) !important;
+    }
+}
+
+@keyframes helcurt-float-right {
+    0% {
+        transform: translateY(-50%) translateX(0) !important;
+    }
+    100% {
+        transform: translateY(-50%) translateX(10px) !important;
+    }
+}

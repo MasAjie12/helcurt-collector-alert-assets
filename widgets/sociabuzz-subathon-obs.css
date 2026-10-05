@@ -1,0 +1,88 @@
+
+/* t35: Helcurt Collector flanking timer in preview and OBS production */
+.card .card-header,.subathon-container .sub_judul{position:relative!important;padding-left:0!important;padding-right:0!important;white-space:nowrap!important;overflow:visible!important;text-overflow:clip!important;box-sizing:border-box!important}
+
+/* Helcurt Collector di samping timer (kiri & kanan) */
+.subathon-container .sub_timer{position:relative!important}
+.subathon-container .sub_timer::before,.subathon-container .sub_timer::after{
+  content:""!important;position:absolute!important;top:50%!important;width:3em!important;height:3em!important;
+  background:url("https://raw.githubusercontent.com/MasAjie12/helcurt collector-alert-assets/main/kiri.png") center/contain no-repeat!important;
+  pointer-events:none!important;z-index:6!important;filter:drop-shadow(0 3px 8px rgba(0,0,0,.6)) saturate(1.08);
+}
+.subathon-container .sub_timer::before{left:-3.2em!important;transform:translateY(-50%)!important;animation:helc-wchar-l .5s cubic-bezier(.2,.9,.25,1.14) .25s both,helc-wbob 3.2s ease-in-out infinite alternate!important}
+.subathon-container .sub_timer::after{right:-3.2em!important;transform:translateY(-50%) scaleX(-1)!important;animation:helc-wchar-r .5s cubic-bezier(.2,.9,.25,1.14) .25s both,helc-wbob 3.2s ease-in-out infinite alternate .4s!important}
+@keyframes helc-wchar-l{from{opacity:0;transform:translate(-28px,-50%)}to{opacity:1;transform:translateY(-50%)}}
+@keyframes helc-wchar-r{from{opacity:0;transform:translate(28px,-50%) scaleX(-1)}to{opacity:1;transform:translateY(-50%) scaleX(-1)}}
+@keyframes helc-wbob{0%,100%{filter:drop-shadow(0 3px 8px rgba(0,0,0,.6)) saturate(1.08)}50%{filter:drop-shadow(0 9px 14px rgba(0,0,0,.72)) saturate(1.16)}}
+
+/* t35 Helcurt Collector layout fix: force parent wide + centered */
+body{background:transparent!important;margin:0!important;overflow:hidden!important;font-family:'Trebuchet MS','Segoe UI',sans-serif!important}
+#__next > div > .row.pr-4.pl-4{display:block!important;width:100%!important;max-width:none!important;margin:0!important;padding:0!important}
+#__next > div > .row.pr-4.pl-4 > div{width:100%!important;max-width:none!important;display:flex!important;justify-content:center!important}
+
+.subathon-container{
+  width:640px!important;
+  height:170px!important;
+  margin:10px auto!important;
+  flex:0 0 640px!important;
+  box-sizing:border-box!important;
+  position:relative!important;
+  isolation:isolate!important;
+  overflow:hidden!important;
+  border:1px solid #e91e63!important;
+  border-radius:12px!important;
+  background-image:linear-gradient(rgba(5,53,67,.25),rgba(6,42,51,.45)),url("https://raw.githubusercontent.com/MasAjie12/helcurt collector-alert-assets/main/kiri.png"),radial-gradient(ellipse at 12% 18%,rgba(18,113,143,.34) 0 7px,transparent 8px),radial-gradient(ellipse at 78% 28%,rgba(255,107,74,.28) 0 5px,transparent 6px),radial-gradient(ellipse at 26% 82%,rgba(6,42,51,.22) 0 6px,transparent 7px),linear-gradient(135deg,#3b1152,#1a0526)!important;
+  color:#fce4ec!important;
+  box-shadow:0 0 25px rgba(18,113,143,.34),inset 0 0 22px rgba(18,113,143,.34)!important;
+  animation:helc-sub-in .6s cubic-bezier(.2,.9,.3,1.15) forwards,helc-sub-drift 13s ease-in-out infinite alternate,helc-sub-glow 3.4s ease-in-out infinite!important;
+  padding:16px 26px 18px!important;
+  text-align:center!important;
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:center!important;
+}
+
+@keyframes helc-sub-in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes helc-sub-drift{from{background-position:0 0,0 0,0 0,0 0,0 0,0 0}to{background-position:0 0,0 0,10px -18px,-8px 14px,7px -11px,-10px 8px}}
+@keyframes helc-sub-glow{0%,100%{box-shadow:0 10px 24px rgba(6,42,51,.46),inset 0 1px 0 rgba(255,255,255,.06)}50%{box-shadow:0 14px 34px rgba(6,42,51,.56),inset 0 1px 0 rgba(255,255,255,.09)}}
+
+/* Responsive title: auto-font-size based on container width */
+.subathon-container .sub_judul{
+  color:#e91e63!important;
+  font-size:clamp(18px,3vw,22px)!important;
+  font-weight:800!important;
+  line-height:1.15!important;
+  text-transform:uppercase!important;
+  letter-spacing:1px!important;
+  text-shadow:0 2px 10px rgba(0,0,0,.6),0 0 12px rgba(75,224,138,.25)!important;
+  margin-bottom:4px!important;
+}
+
+.subathon-container .sub_timer{
+  display:flex!important;
+  justify-content:center!important;
+  gap:6px!important;
+  margin-top:8px!important;
+  color:#84ffff!important;
+  text-shadow:0 0 12px rgba(18,113,143,.34)!important;
+  font:900 28px 'Courier New',monospace!important;
+  flex-wrap:nowrap!important;
+}
+
+.subathon-container .sub_timer span{
+  min-width:30px!important;
+  background:rgba(6,42,51,.55)!important;
+  border:1px solid rgba(75,224,138,.28)!important;
+  border-radius:6px!important;
+  padding:2px 3px!important;
+  box-shadow:inset 0 2px 8px rgba(0,0,0,.4)!important;
+}
+
+#__next > div > .chakra-heading::before{
+  content:"HELCURT COLLECTOR LEADERBOARD";
+  font-size:19px!important;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:#00e5ff!important;
+  text-shadow:0 2px 8px rgba(0,0,0,.85);
+}

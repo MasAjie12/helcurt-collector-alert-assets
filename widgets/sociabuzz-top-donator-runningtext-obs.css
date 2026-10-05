@@ -1,0 +1,25 @@
+
+/* t35: Helcurt Collector flanking title in preview and OBS production (in-box: card overflow:hidden clips translate(-100%)) */
+.card .card-header,.subathon-container .sub_judul{position:relative!important;padding-left:3.9em!important;padding-right:3.9em!important}
+.card .card-header::before,.card .card-header::after,.subathon-container .sub_judul::before,.subathon-container .sub_judul::after{
+  content:""!important;position:absolute!important;top:50%!important;width:3.4em!important;height:3.4em!important;
+  background:url("https://raw.githubusercontent.com/MasAjie12/helcurt collector-alert-assets/main/kiri.png") center/contain no-repeat!important;
+  pointer-events:none!important;z-index:6!important;filter:drop-shadow(0 3px 8px rgba(0,0,0,.6)) saturate(1.08);
+}
+.card .card-header::before,.subathon-container .sub_judul::before{left:.35em!important;transform:translateY(-50%)!important;animation:helc-wchar-l .5s cubic-bezier(.2,.9,.25,1.14) .25s both,helc-wbob 3.2s ease-in-out infinite alternate!important}
+.card .card-header::after,.subathon-container .sub_judul::after{right:.35em!important;transform:translateY(-50%) scaleX(-1)!important;animation:helc-wchar-r .5s cubic-bezier(.2,.9,.25,1.14) .25s both,helc-wbob 3.2s ease-in-out infinite alternate .4s!important}
+@keyframes helc-wchar-l{from{opacity:0;transform:translate(-28px,-50%)}to{opacity:1;transform:translateY(-50%)}}
+@keyframes helc-wchar-r{from{opacity:0;transform:translate(28px,-50%) scaleX(-1)}to{opacity:1;transform:translateY(-50%) scaleX(-1)}}
+@keyframes helc-wbob{0%,100%{filter:drop-shadow(0 3px 8px rgba(0,0,0,.6)) saturate(1.08)}50%{filter:drop-shadow(0 9px 14px rgba(0,0,0,.72)) saturate(1.16)}}
+/* TOP DONATOR RUNNING TEXT — Helcurt Collector Helcurt Collector Pokemon Theme (t35, OBS) */
+.custom-font{box-sizing: border-box !important; position: relative !important; isolation: isolate !important; width: 100% !important; min-height: 40px !important; margin: 0 !important; padding: 6px 12px !important; overflow: hidden !important; display: flex !important; align-items: center !important; border-top: 3px solid #ff4081 !important; border-bottom: 3px solid #7b1fa2 !important; background-image: linear-gradient(90deg, rgba(6,42,51,.94), rgba(5,53,67,.88)),
+                      url("https://raw.githubusercontent.com/MasAjie12/helcurt collector-alert-assets/main/bg.jpg") !important; background-size: cover !important; background-position: center center !important; box-shadow: 0 4px 15px rgba(22, 6, 46, 0.35), inset 0 0 20px rgba(255, 217, 47, 0.35) !important; animation: helc-rt-drift 20s ease-in-out infinite alternate !important}
+.custom-font::before{content: "" !important; position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 3px !important; background: repeating-linear-gradient(90deg, #e91e63 0 20px, #ff4081 20px 40px) !important; opacity: 0.85 !important; z-index: 2 !important}
+.custom-font marquee.text-center{color: #fce4ec !important; font-family: 'Trebuchet MS', 'Segoe UI', sans-serif !important; font-size: 16px !important; font-weight: 700 !important; text-transform: uppercase !important; letter-spacing: 1px !important; text-shadow: 0 0 8px rgba(255, 255, 255, 0.85) !important}
+.custom-font marquee strong{color: #fce4ec !important; font-weight: 800 !important}
+.custom-font marquee strong:first-child{color: #00e5ff !important; text-shadow: 0 0 10px rgba(255, 217, 47, 0.6) !important; margin-right: 15px !important}
+.custom-font marquee strong:not(:first-child)::before{content: "✨ " !important; font-size: 13px !important; filter: drop-shadow(0 0 6px rgba(239, 61, 78, 0.7)) !important}
+@keyframes helc-rt-drift {
+    from { background-position: center 0%; }
+    to { background-position: center 10%; }
+}
